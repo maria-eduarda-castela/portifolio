@@ -2,25 +2,45 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Início - Maria Eduarda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Portfólio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
     <nav class="nav-buttons">
-      <a href="index.html" class="btn">Início</a>
-      <a href="sobre.html" class="btn">Sobre</a>
-      <a href="contato.html" class="btn">Contato</a>
+  <!-- Botão Início: leva para a página principal do portfólio -->
+  <a href="index.html" class="btn" target="_blank">Início</a>
+  <!-- Botão Sobre: abre uma nova aba com informações pessoais e gostos -->
+  <a href="sobre.html" class="btn" target="_blank">Sobre</a>
+  <!-- Botão Projetos: mostra os projetos desenvolvidos em uma nova aba -->
+  <a href="projetos.html" class="btn" target="_blank">Projetos</a>
+  <!-- Botão Contato: abre uma nova aba com informações de contato -->
+  <a href="contato.html" class="btn" target="_blank">Contato</a>
     </nav>
   </header>
 
-  <main class="profile-container">
-    <img src="castela.jpg" alt="Foto de Maria Eduarda Silva" class="profile-photo" />
-    <h1>Maria Eduarda da Silva dos Santos</h1>
-    <p>Olá! Eu sou estudante e estou em processo de aprendizado para crescer cada vez mais.</p>
-  </main>
+  <section class="profile-container">
+    <img src="castela.jpg" alt="Foto de Perfil" class="profile-photo" />
+    <h1>Maria Eduarda Santos</h1>
+    <p>Desenvolvedor Front-end apaixonado por criar experiências incríveis.</p>
+  </section>
+
+  <section class="projects-container">
+    <div class="project-card">
+      <h3>Projeto 1</h3>
+      <p>Mexo com coisas relacionadas ao mundo do rodeio e agronomia.</p>
+    </div>
+    <div class="project-card">
+      <h3>Projeto 2</h3>
+      <p>Gosto de coisas relacionadas a guerras, exércitos e afins.</p>
+    </div>
+    <div class="project-card">
+      <h3>Projeto 3</h3>
+      <p>Gosto de filmes de ação, comédia, romance e outros.</p>
+    </div>
+  </section>
 
 </body>
 </html>

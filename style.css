@@ -1,79 +1,147 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Estilo global */
 
-/* Corpo da página */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #681212 0%, #501111 100%);
-  color: #222;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-/* Menu de navegação com botões */
+  margin: 0;
+
+  padding: 0;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background-color: #4B0D19; /* vinho escuro */
+
+  color: #F5E9E9; /* tom claro para contraste */
+
+}
+ 
+/* Estilo do cabeçalho */
+
+header {
+
+  position: fixed;
+
+  top: 0;
+
+  width: 100%;
+
+  background-color: #751515; /* vinho mais vivo */
+
+  padding: 1rem 0;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  z-index: 1000;
+
+}
+ 
+/* Menu com flexbox */
+
 .nav-buttons {
-  margin-top: 30px;
-  margin-bottom: 40px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 2rem;
+
 }
 
 .nav-buttons .btn {
+  color: #F5E9E9;
+  background-color: #751515;
   text-decoration: none;
-  background-color: #ffffffcc;
-  color: #333;
-  padding: 12px 30px;
-  margin: 0 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 30px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  display: inline-block;
-}
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  transition: background 0.3s, color 0.3s;
+ 
 
+}
+ 
 .nav-buttons .btn:hover {
-  background-color: #420808;
-  color: #fff;
-  box-shadow: 0 12px 20px rgba(170, 11, 11, 0.6);
-  transform: translateY(-3px);
-}
 
-/* Container principal */
+  background-color: #333;
+
+  border-radius: 5px;
+
+}
+ 
+/* Espaçamento do conteúdo por conta do header fixo */
+
 .profile-container {
-  background: #fff;
-  max-width: 500px;
-  padding: 40px 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+  padding-top: 100px;
+
   text-align: center;
-}
 
-/* Foto com sombra e borda */
+}
+ 
 .profile-photo {
-  width: 160px;
-  height: 160px;
+
+  width: 150px;
+
+  height: 150px;
+
   border-radius: 50%;
+
   object-fit: cover;
-  border: 5px solid #772121;
-  box-shadow: 0 8px 20px rgba(255, 204, 0, 0.5);
-  margin-bottom: 25px;
-}
 
-/* Título */
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #9b3c3c;
-  font-weight: 700;
-}
+  margin-bottom: 1rem;
 
-/* Parágrafo */
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #992c2c;
 }
+ 
+/* Container de projetos */
+
+.projects-container {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 2rem;
+
+  padding: 2rem;
+
+}
+ 
+/* Card de projeto */
+
+.project-card {
+
+  background-color: #d8d3d3;
+
+  border: 1px solid #751515;
+
+  border-radius: 10px;
+
+  padding: 1.5rem;
+
+  width: 300px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  transition: transform 0.2s;
+
+}
+ 
+.project-card:hover {
+
+  transform: translateY(-5px);
+
+}
+ 
+.project-card h3 {
+
+  margin-top: 0;
+
+}
+ 
+.project-card p {
+
+  color: #666;
+
+}
+ 
