@@ -2,45 +2,41 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meu Portfólio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <header>
-    <nav class="nav-buttons">
-  <!-- Botão Início: leva para a página principal do portfólio -->
-  <a href="index.html" class="btn" target="_blank">Início</a>
-  <!-- Botão Sobre: abre uma nova aba com informações pessoais e gostos -->
-  <a href="sobre.html" class="btn" target="_blank">Sobre</a>
-  <!-- Botão Projetos: mostra os projetos desenvolvidos em uma nova aba -->
-  <a href="projetos.html" class="btn" target="_blank">Projetos</a>
-  <!-- Botão Contato: abre uma nova aba com informações de contato -->
-  <a href="contato.html" class="btn" target="_blank">Contato</a>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Meu Portfólio</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>Bem-vindo ao Meu Portfólio</h1>
+      <p>Explorando criatividade, código e design!</p>
+      <a href="projetos.html" class="btn">Ver Projetos</a>
+    </div>
   </header>
 
-  <section class="profile-container">
-    <img src="castela.jpg" alt="Foto de Perfil" class="profile-photo" />
-    <h1>Maria Eduarda Santos</h1>
-    <p>Desenvolvedor Front-end apaixonado por criar experiências incríveis.</p>
-  </section>
-
-  <section class="projects-container">
-    <div class="project-card">
-      <h3>Projeto 1</h3>
-      <p>Mexo com coisas relacionadas ao mundo do rodeio e agronomia.</p>
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Meu Portfólio | Desenvolvido com 💙</p>
     </div>
-    <div class="project-card">
-      <h3>Projeto 2</h3>
-      <p>Gosto de coisas relacionadas a guerras, exércitos e afins.</p>
-    </div>
-    <div class="project-card">
-      <h3>Projeto 3</h3>
-      <p>Gosto de filmes de ação, comédia, romance e outros.</p>
-    </div>
-  </section>
+  </footer>
 
 </body>
 </html>

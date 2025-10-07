@@ -1,147 +1,182 @@
-/* Estilo global */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-
-  margin: 0;
-
-  padding: 0;
-
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-  background-color: #4B0D19; /* vinho escuro */
-
-  color: #F5E9E9; /* tom claro para contraste */
-
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf5f5;
+  color: #2e2e2e;
+  line-height: 1.6;
 }
- 
-/* Estilo do cabeçalho */
 
-header {
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  position: fixed;
-
+/* Navbar */
+.navbar {
+  background-color: #5C0000;
+  color: white;
+  padding: 15px 0;
+  position: sticky;
   top: 0;
-
-  width: 100%;
-
-  background-color: #751515; /* vinho mais vivo */
-
-  padding: 1rem 0;
-
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
   z-index: 1000;
-
 }
- 
-/* Menu com flexbox */
 
-.nav-buttons {
-
+.nav-container {
   display: flex;
-
-  justify-content: center;
-
-  gap: 2rem;
-
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-buttons .btn {
-  color: #F5E9E9;
-  background-color: #751515;
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
   text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border: none;
-  transition: background 0.3s, color 0.3s;
- 
-
+  transition: color 0.3s ease;
 }
- 
-.nav-buttons .btn:hover {
 
-  background-color: #333;
-
-  border-radius: 5px;
-
+.nav-links a:hover {
+  color: #ffcdd2;
 }
- 
-/* Espaçamento do conteúdo por conta do header fixo */
 
-.profile-container {
-
-  padding-top: 100px;
-
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(139, 0, 0, 0.7), rgba(139, 0, 0, 0.7)),
+              url('https://via.placeholder.com/1200x500') no-repeat center center/cover;
+  color: white;
   text-align: center;
-
+  padding: 100px 20px;
 }
- 
-.profile-photo {
 
-  width: 150px;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
 
-  height: 150px;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
 
-  border-radius: 50%;
+.btn {
+  display: inline-block;
+  background-color: #a30000;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
 
+.btn:hover {
+  background-color: #750000;
+}
+
+/* Seções */
+section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* Galeria */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 400px; /* altura aumentada */
   object-fit: cover;
-
-  margin-bottom: 1rem;
-
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
- 
-/* Container de projetos */
 
-.projects-container {
+.galeria img:hover {
+  transform: scale(1.05);
+}
 
+/* Rodapé */
+footer {
+  background-color: #5C0000;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+/* Contato - Botões */
+.contato-buttons {
   display: flex;
-
-  flex-wrap: wrap;
-
-  justify-content: center;
-
-  gap: 2rem;
-
-  padding: 2rem;
-
+  flex-direction: column; /* empilha os botões verticalmente */
+  gap: 20px;
+  margin-top: 30px;
+  align-items: center;
 }
- 
-/* Card de projeto */
 
-.project-card {
-
-  background-color: #d8d3d3;
-
-  border: 1px solid #751515;
-
-  border-radius: 10px;
-
-  padding: 1.5rem;
-
-  width: 300px;
-
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  transition: transform 0.2s;
-
+/* Botões base */
+.contato-buttons .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
+  text-align: center;
 }
- 
-.project-card:hover {
 
-  transform: translateY(-5px);
-
+/* Hover efeito geral */
+.contato-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
- 
-.project-card h3 {
 
-  margin-top: 0;
-
+/* Botão E-mail (vermelho vinho) */
+.btn-email {
+  background-color: #8B0000;
 }
- 
-.project-card p {
 
-  color: #666;
-
+.btn-email:hover {
+  background-color: #a30000;
 }
- 
+
+/* Botão WhatsApp (verde) */
+.btn-whatsapp {
+  background-color: #25D366;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+/* Botão Instagram (degradê rosa/laranja) */
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.btn-instagram:hover {
+  opacity: 0.9;
+}
