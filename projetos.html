@@ -6,23 +6,98 @@
   <title>Meus Projetos</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    .voltar-container {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      background-color: #0e2c4d;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-voltar:hover {
+      background-color: #0a3058;
+      transform: translateY(-2px);
+    }
+
+    /* Menu lateral */
+    .side-menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 2000;
+      color: #4d1111;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #4d1111;
+      color: #fff;
+      padding-top: 60px;
+      transition: 0.4s ease;
+      box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+      z-index: 1500;
+    }
+
+    .side-menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .side-menu a:hover {
+      background-color: #6a1a1a;
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <button class="side-menu-btn" id="sideMenuBtn">☰</button>
+
+  <nav class="side-menu" id="sideMenu">
+    <a href="index.html">🏠 Início</a>
+    <a href="sobre.html">👤 Sobre</a>
+    <a href="projetos.html">💼 Projetos</a>
+    <a href="contato.html">✉️ Contato</a>
+  </nav>
+
   <nav class="navbar">
     <div class="container nav-container">
       <div class="logo">Meu Portfólio</div>
       <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="projetos.html" class="active">Projetos</a></li>
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Galeria de Projetos -->
   <section class="projetos">
     <div class="container">
       <h2>Meus Projetos</h2>
@@ -37,12 +112,23 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
+  <div class="voltar-container">
+    <a href="index.html" class="btn-voltar">← Voltar ao Início</a>
+  </div>
+
   <footer>
     <div class="container">
       <p>&copy; 2025 Meu Portfólio | Desenvolvido com 💙</p>
     </div>
   </footer>
+
+  <script>
+    const sideMenuBtn = document.getElementById('sideMenuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    sideMenuBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+  </script>
 
 </body>
 </html>

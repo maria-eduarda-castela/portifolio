@@ -6,15 +6,121 @@
   <title>Meu Portfólio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 80vh;
+    }
+
+    .foto-perfil {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid #4d1111;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      margin-top: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .mensagem-boas-vindas {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    #btnTopo {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4d1111;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* Menu lateral */
+    .side-menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 2000;
+      color: #4d1111;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #4d1111;
+      color: #fff;
+      padding-top: 60px;
+      transition: 0.4s ease;
+      box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+      z-index: 1500;
+    }
+
+    .side-menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .side-menu a:hover {
+      background-color: #6a1a1a;
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Botão Menu Lateral -->
+  <button class="side-menu-btn" id="sideMenuBtn">☰</button>
+
+  <!-- Menu Lateral -->
+  <nav class="side-menu" id="sideMenu">
+    <a href="index.html">🏠 Início</a>
+    <a href="sobre.html">👤 Sobre</a>
+    <a href="projetos.html">💼 Projetos</a>
+    <a href="contato.html">✉️ Contato</a>
+  </nav>
 
   <!-- Navbar -->
   <nav class="navbar">
     <div class="container nav-container">
       <div class="logo">Meu Portfólio</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Início</a></li>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="projetos.html">Projetos</a></li>
         <li><a href="contato.html">Contato</a></li>
@@ -25,18 +131,65 @@
   <!-- Hero -->
   <header class="hero">
     <div class="container">
+      <img src="1000008608.jpg" alt="Minha Foto" class="foto-perfil" />
       <h1>Bem-vindo ao Meu Portfólio</h1>
-      <p>Explorando criatividade, código e design!</p>
+      <p class="mensagem-boas-vindas" id="mensagemDinamica">Fico feliz em ter você aqui! 🚀</p>
       <a href="projetos.html" class="btn">Ver Projetos</a>
     </div>
   </header>
 
-  <!-- Rodapé -->
+  <div style="height: 300px;"></div>
+
+  <button onclick="topFunction()" id="btnTopo" title="Voltar ao topo">↑</button>
+
   <footer>
     <div class="container">
       <p>&copy; 2025 Meu Portfólio | Desenvolvido com 💙</p>
     </div>
   </footer>
+
+  <script>
+    // Menu hamburguer superior
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Botão topo
+    const btnTopo = document.getElementById("btnTopo");
+    window.onscroll = function() {
+      btnTopo.style.display = (window.scrollY > 100) ? "block" : "none";
+    };
+    function topFunction() {
+      window.scrollTo({top: 0, behavior: "smooth"});
+    }
+
+    // Mensagem dinâmica
+    const mensagens = [
+      "Fico feliz em ter você aqui! 🚀",
+      "Explore meus projetos e ideias! 💡",
+      "Criando com paixão e propósito ✨",
+      "Transformando sonhos em código 💻"
+    ];
+    let i = 0;
+    const msg = document.getElementById("mensagemDinamica");
+    setInterval(() => {
+      msg.style.opacity = 0;
+      setTimeout(() => {
+        i = (i + 1) % mensagens.length;
+        msg.textContent = mensagens[i];
+        msg.style.opacity = 1;
+      }, 800);
+    }, 4000);
+
+    // Menu lateral
+    const sideMenuBtn = document.getElementById('sideMenuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    sideMenuBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+  </script>
 
 </body>
 </html>

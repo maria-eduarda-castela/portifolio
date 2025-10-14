@@ -6,8 +6,89 @@
   <title>Contato</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* Botão Menu Lateral */
+    .side-menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 2000;
+      color: #4d1111;
+    }
+
+    /* Menu Lateral */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #4d1111;
+      color: #fff;
+      padding-top: 60px;
+      transition: 0.4s ease;
+      box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+      z-index: 1500;
+    }
+
+    .side-menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .side-menu a:hover {
+      background-color: #6a1a1a;
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+
+    .contato-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .contato-buttons .btn {
+      padding: 12px 20px;
+      background-color: #0e2c4d;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .contato-buttons .btn:hover {
+      background-color: #0a3058;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Botão Menu Lateral -->
+  <button class="side-menu-btn" id="sideMenuBtn">☰</button>
+
+  <!-- Menu Lateral -->
+  <nav class="side-menu" id="sideMenu">
+    <a href="index.html">🏠 Início</a>
+    <a href="sobre.html">👤 Sobre</a>
+    <a href="projetos.html">💼 Projetos</a>
+    <a href="contato.html">✉️ Contato</a>
+  </nav>
 
   <!-- Navbar -->
   <nav class="navbar">
@@ -17,7 +98,7 @@
         <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
       </ul>
     </div>
   </nav>
@@ -29,19 +110,19 @@
       <p>Você pode me encontrar nos seguintes canais:</p>
 
       <div class="contato-buttons">
-  <a href="mailto:mariaeudardadassilva2@gmail.com" class="btn btn-email">
-    📧 Enviar E-mail
-  </a>
+        <a href="mailto:mariaeudardadassilva2@gmail.com" class="btn">
+          📧 Enviar E-mail
+        </a>
 
-  <a href="https://wa.me/5599999999999?text=Olá!%20Quero%20entrar%20em%20contato" 
-     target="_blank" class="btn btn-whatsapp">
-    💬 WhatsApp
-  </a>
+        <a href="https://wa.me/5599999999999?text=Olá!%20Quero%20entrar%20em%20contato" 
+           target="_blank" class="btn">
+          💬 WhatsApp
+        </a>
 
-  <a href="https://instagram.com/seu_usuario" target="_blank" class="btn btn-instagram">
-    📸 Instagram
-  </a>
-</div>
+        <a href="https://instagram.com/seu_usuario" target="_blank" class="btn">
+          📸 Instagram
+        </a>
+      </div>
     </div>
   </section>
 
@@ -51,6 +132,15 @@
       <p>&copy; 2025 Meu Portfólio | Desenvolvido com 💙</p>
     </div>
   </footer>
+
+  <script>
+    // Menu lateral
+    const sideMenuBtn = document.getElementById('sideMenuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    sideMenuBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+  </script>
 
 </body>
 </html>
